@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texi Bisness</title>
+    <link rel="stylesheet" href="style.css">
+    <a href="page.php">page.php</a>
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Welcome to Texi Bisness</h1>
+            <p>Your trusted partner in transportation services</p>
+        </div>
+    </header>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <section class="about-us">
+                <section class="about-us">
+                    <h2>About Us</h2>
+                    <button id="read-more-button">Read More</button>
+                    <div id="about-content" style="display: none;">
+                        <p>We are a leading taxi business with a reputation for excellence and quality service.</p>
+                    <h3>Our Team</h3>
+                    <p>Meet our dedicated team of professionals who are committed to providing the best texi services in the industry.</p>
+                    
+                    <h3>Our History</h3>
+                    <p>Established in 2005, Texi Bisness has been serving customers for over 15 years. Learn more about our journey and milestones.</p>
+                </div>
+            </section>
+            <section class="contact">
+                <h2>Contact Us</h2>
+                <button id="contact-button">Show Contact Numbers</button>
+                <div id="contact-content" style="display: none;">
+                    <p>+9053 383 388 99</p>
+                    <p>+9053 384 700 75</p>
+                    <p>+9053 383 854 87</p>
+                    <!-- Additional content for the "Contact Us" section goes here -->
+                </div>
+            </section>
+            
+         </nav>
+    <main class="main-content">
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service">
+                <img src="service1.jpg" alt="Service 1">
+                <h3>Service 1</h3>
+                <p>Explore our premium texi services that cater to your every need.</p>
+            </div>
+            <div class="service">
+                <img src="service2.jpg" alt="Service 2">
+                <h3>Service 2</h3>
+                <p>Efficient and reliable texi service for all your transportation needs.</p>
+            </div>
+        </section>
+        <section class="about-us">
+            <h2>About Us</h2>
+            <p>We are a leading texi business with a reputation for excellence and quality service. With years of experience, we ensure a comfortable and safe journey for our clients.</p>
+        </section>
+        <section class="contact">
+            <h2>Contact Us</h2>
+<form action="contact.php" method="post">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2023 Texi Bisness</p>
+    </footer>
+    <div id="clock" class="clock"></div>
+
+    <script src="script.js"></script>
+    <script>
+    // Read More button
+const readMoreButton = document.getElementById("read-more-button");
+const aboutContent = document.getElementById("about-content");
+
+readMoreButton.addEventListener("click", function () {
+    if (aboutContent.style.display === "none" || aboutContent.style.display === "") {
+        aboutContent.style.display = "block";
+        readMoreButton.textContent = "Read Less";
+    } else {
+        aboutContent.style.display = "none";
+        readMoreButton.textContent = "Read More";
+    }
+});
+
+// Contact button
+const contactButton = document.getElementById("contact-button");
+const contactContent = document.getElementById("contact-content");
+
+contactButton.addEventListener("click", function () {
+    if (contactContent.style.display === "none" || contactContent.style.display === "") {
+        contactContent.style.display = "block";
+        contactButton.textContent = "Hide Contact Numbers";
+    } else {
+        contactContent.style.display = "none";
+        contactButton.textContent = "Show Contact Numbers";
+    }
+    // Set the interval (in milliseconds) for page refresh
+const refreshInterval = 5000; // 5000 milliseconds = 5 seconds
+
+// Function to refresh the page
+function refreshPage() {
+    location.reload(); // Reloads the current page
+}
+
+// Set the interval to refresh the page
+const refreshTimer = setInterval(refreshPage, refreshInterval);
+
+});
+</script>
+        
+    
+    
+    
+</body>
+</html>
